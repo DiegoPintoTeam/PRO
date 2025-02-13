@@ -1,6 +1,6 @@
 #! /bin/sh
 #-----------------------------
-# squid	open source by Scottssh.
+# squid	open source by Diego Pinto (Team).
 #-----------------------------
 
 NAME=squid3
