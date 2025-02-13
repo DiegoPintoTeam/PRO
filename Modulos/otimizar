@@ -1,9 +1,8 @@
 #!/bin/bash
 #===================================================
-#	SCRIPT: OTIMIZAR	SCOTT PLUS
-#	DESENVOLVIDO POR:	scott
-#	CONTATO TELEGRAM:	http://t.me/scottssh
-#	CANAL TELEGRAM:	http://t.me/scottsshd
+#	SCRIPT: OTIMIZAR	Vpn Plus
+#	DESENVOLVIDO POR:	Diego Pinto (Team)
+#	CONTATO TELEGRAM:	http://t.me/DiegoPintoTM
 #===================================================
 fun_bar() {
 	comando[0]="$1"
