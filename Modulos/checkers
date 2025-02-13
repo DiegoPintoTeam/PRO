@@ -23,7 +23,7 @@
             bash <(curl -sL https://raw.githubusercontent.com/DiegoPintoTeam/DTunnel/main/MenuDT.sh)
             ;;
             3 | 03)
-            bash <(curl -sL https://raw.githubusercontent.com/DiegoPintoTeam/CheckUser/master/install.sh)
+            bash <(curl -sL https://raw.githubusercontent.com/DiegoPintoTeam/DTCheckUser/refs/heads/main/install.sh)
             ;;
             4 | 04)
             bash <(wget -qO- https://raw.githubusercontent.com/DiegoPintoTeam/DTunnel/main/AnyChk)
