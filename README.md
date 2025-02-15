@@ -19,7 +19,7 @@
 # Como Instalar!
 
 ````
-apt install wget -y; bash <(wget -qO- raw.githubusercontent.com/DiegoPintoTeam/PR0/main/ssh-plus)
+apt install wget -y; bash <(wget -qO- raw.githubusercontent.com/DiegoPintoTeam/PRO/main/ssh-plus)
 ````
 
 # Telegram
