@@ -35,7 +35,7 @@ fun_bar() {
 fun_botOnOff() {
     [[ $(ps x | grep "bot_plus" | grep -v grep | wc -l) = '0' ]] && {
         clear
-        echo -e "\E[44;1;37m             INSTALADOR BOT SSHPLUS                \E[0m\n"
+        echo -e "\E[44;1;37m             INSTALADOR BOT PRO                \E[0m\n"
         echo -ne "\033[1;32mINFORME SEU TOKEN:\033[1;37m "
         read tokenbot
         echo ""
@@ -45,18 +45,18 @@ fun_botOnOff() {
         echo -e "\033[1;32mINICIANDO BOT TURBONET SSH \033[0m\n"
         fun_bot1() {
         	[[ "$(grep -wc '16' /etc/issue.net)" != '0' ]] && {
-        		raw.githubusercontent.com/DiegoPintoTeam/PRO/main/Modulos/ShellBot.sh > /etc/SSHPlus/ShellBot.sh
+        		raw.githubusercontent.com/DiegoPintoTeam/PRO/main/Modulos/ShellBot.sh > /etc/PRO/ShellBot.sh
         	}
-            [[ ! -e "/etc/SSHPlus/ShellBot.sh" ]] && {
-				wget -qO- https://raw.githubusercontent.com/DiegoPintoTeam/PRO/main/Modulos/ShellBot.sh >/etc/SSHPlus/ShellBot.sh
+            [[ ! -e "/etc/PRO/ShellBot.sh" ]] && {
+				wget -qO- https://raw.githubusercontent.com/DiegoPintoTeam/PRO/main/Modulos/ShellBot.sh >/etc/PRO/ShellBot.sh
 			}
-            cd /etc/SSHPlus
+            cd /etc/PRO
             screen -dmS bot_plus ./bot $tokenbot $iduser >/dev/null 2>&1
             [[ $(grep -wc "bot_plus" /etc/autostart) = '0' ]] && {
-                echo -e "ps x | grep 'bot_plus' | grep -v 'grep' || cd /etc/SSHPlus && sudo screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >>/etc/autostart
+                echo -e "ps x | grep 'bot_plus' | grep -v 'grep' || cd /etc/PRO && sudo screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >>/etc/autostart
             } || {
                 sed -i '/bot_plus/d' /etc/autostart
-                echo -e "ps x | grep 'bot_plus' | grep -v 'grep' || cd /etc/SSHPlus && sudo screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >>/etc/autostart
+                echo -e "ps x | grep 'bot_plus' | grep -v 'grep' || cd /etc/PRO && sudo screen -dmS bot_plus ./bot $tokenbot $iduser && cd $HOME" >>/etc/autostart
             }
             [[ $(crontab -l | grep -c "verifbot") = '0' ]] && (
                 crontab -l 2>/dev/null
@@ -104,5 +104,5 @@ fun_instbot() {
         menu
     }
 }
-[[ -f "/etc/SSHPlus/ShellBot.sh" ]] && fun_botOnOff || fun_instbot
+[[ -f "/etc/PRO/ShellBot.sh" ]] && fun_botOnOff || fun_instbot
 #fim
