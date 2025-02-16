@@ -4,7 +4,7 @@ comando[0]="$1"
 comando[1]="$2"
  (
 [[ -e $HOME/fim ]] && rm $HOME/fim
-[[ ! -e /usr/lib/pro ]] && rm -rf /bin/menu > /dev/null 2>&1
+[[ ! -e /usr/lib/vpnpro ]] && rm -rf /bin/menu > /dev/null 2>&1
 ${comando[0]} -y > /dev/null 2>&1
 ${comando[1]} -y > /dev/null 2>&1
 touch $HOME/fim
@@ -36,7 +36,7 @@ comando[0]="$1"
 comando[1]="$2"
  (
 [[ -e $HOME/fim ]] && rm $HOME/fim
-[[ ! -d /etc/PRO ]] && rm -rf /bin/menu
+[[ ! -d /etc/VpnPro ]] && rm -rf /bin/menu
 ${comando[0]} > /dev/null 2>&1
 ${comando[1]} > /dev/null 2>&1
 touch $HOME/fim
@@ -193,8 +193,8 @@ function autoexec () {
 }
 #menu2
 menu2 (){
-[[ -e /etc/Plus-torrent ]] && stsf=$(echo -e "\033[1;32m(ON◉) ") || stsf=$(echo -e "\033[1;31m(OFF) ")
-stsbot=$(ps x | grep "bot_plus"|grep -v grep > /dev/null && echo -e "\033[1;32m(ON◉) " || echo -e "\033[1;31m(OFF) ")
+[[ -e /etc/VpnPro-torrent ]] && stsf=$(echo -e "\033[1;32m(ON◉) ") || stsf=$(echo -e "\033[1;31m(OFF) ")
+stsbot=$(ps x | grep "bot_vpnpro"|grep -v grep > /dev/null && echo -e "\033[1;32m(ON◉) " || echo -e "\033[1;31m(OFF) ")
 stsbotteste=$(ps x | grep "bot_teste"|grep -v grep > /dev/null && echo -e "\033[1;32m(ON◉) " || echo -e "\033[1;31m(OFF) ")
 stsbotrev=$(ps x | grep "bot_rev"|grep -v grep > /dev/null && echo -e "\033[1;32m(ON◉) " || echo -e "\033[1;31m(OFF) ")
 autm=$(grep "menu;" /etc/profile > /dev/null && echo -e "\033[1;32m(ON◉) " || echo -e "\033[1;31m(OFF) ")
@@ -211,7 +211,7 @@ else
 system=$(cut -d' ' -f1 /etc/issue.net)
 fi
 _ons=$(ps -x | grep sshd | grep -v root | grep priv | wc -l)
-[[ "$(cat /etc/PRO/Exp)" != "" ]] && _expuser=$(cat /etc/PRO/Exp) || _expuser="0"
+[[ "$(cat /etc/VpnPro/Exp)" != "" ]] && _expuser=$(cat /etc/VpnPro/Exp) || _expuser="0"
 [[ -e /etc/openvpn/openvpn-status.log ]] && _onop=$(grep -c "10.8.0" /etc/openvpn/openvpn-status.log) || _onop="0"
 [[ -e /etc/default/dropbear ]] && _drp=$(ps aux | grep dropbear | grep -v grep | wc -l) _ondrp=$(($_drp - 1)) || _ondrp="0"
 _onli=$(($_ons + $_onop + $_ondrp))
@@ -233,7 +233,7 @@ echo -e "\033[0;36m
   ☆★ ░▒█░░ ▒█░▒█ ▒█▄▄▀ ▒█▀▀▄ ▒█░░▒█ ▒█▒█▒█ ▒█▀▀▀ ░▒█░░─★☆
   ☆★ ░▒█░░ ░▀▄▄▀ ▒█░▒█ ▒█▄▄█ ▒█▄▄▄█ ▒█░░▀█ ▒█▄▄▄ ░▒█░░─★☆  \033[0m"
 echo -e "\033[0;36m╔═══════════════════════════•⊱✦⊰•═══════════════════════════╗\033[0m"
-echo -e "\033[0;36m \E[5;34;47m                  @TURBONET_SSH_SCRIPT_PRO                 \E[0m \033[1;31m"
+echo -e "\033[0;36m \E[5;34;47m                  @TURBONET_SSH_SCRIPT_VpnPro                 \E[0m \033[1;31m"
 echo -e "\033[0;36m╚═══════════════════════════•⊱✦⊰•═══════════════════════════╝\033[0m"
 echo -e "\033[0;36m  \033[1;32mSISTEMA           \033[1;31m  \033[1;32mMEMÓRIA RAM      \033[1;31m \033[1;32m PROCESSADOR      \033[1;31m"
 echo -e "\033[0;36m  \033[1;36mOS: \033[1;37m$_system    \033[1;31m  \033[1;36mTotal:\033[1;37m$_ram \033[1;31m  \033[1;36mNucleos: \033[1;37m$_core\033[0m   \033[1;31m"
@@ -337,7 +337,7 @@ else
 system=$(cut -d' ' -f1 /etc/issue.net)
 fi
 _ons=$(ps -x | grep sshd | grep -v root | grep priv | wc -l)
-[[ "$(cat /etc/PRO/Exp)" != "" ]] && _expuser=$(cat /etc/PRO/Exp) || _expuser="0"
+[[ "$(cat /etc/VpnPro/Exp)" != "" ]] && _expuser=$(cat /etc/VpnPro/Exp) || _expuser="0"
 [[ -e /etc/openvpn/openvpn-status.log ]] && _onop=$(grep -c "10.8.0" /etc/openvpn/openvpn-status.log) || _onop="0"
 [[ -e /etc/default/dropbear ]] && _drp=$(ps aux | grep dropbear | grep -v grep | wc -l) _ondrp=$(($_drp - 1)) || _ondrp="0"
 _onli=$(($_ons + $_onop + $_ondrp))
@@ -359,7 +359,7 @@ echo -e "\033[0;36m
   ☆★ ░▒█░░ ▒█░▒█ ▒█▄▄▀ ▒█▀▀▄ ▒█░░▒█ ▒█▒█▒█ ▒█▀▀▀ ░▒█░░─★☆
   ☆★ ░▒█░░ ░▀▄▄▀ ▒█░▒█ ▒█▄▄█ ▒█▄▄▄█ ▒█░░▀█ ▒█▄▄▄ ░▒█░░─★☆  \033[0m"
 echo -e "\033[0;36m╔═══════════════════════════•⊱✦⊰•═══════════════════════════╗\033[0m"
-echo -e "\033[0;36m \E[5;34;47m                  @TURBONET_SSH_SCRIPT_PRO                 \E[0m \033[1;31m"
+echo -e "\033[0;36m \E[5;34;47m                  @TURBONET_SSH_SCRIPT_VpnPro                 \E[0m \033[1;31m"
 echo -e "\033[0;36m╚═══════════════════════════•⊱✦⊰•═══════════════════════════╝\033[0m"
 echo -e "\033[0;36m  \033[1;32mSISTEMA           \033[1;31m  \033[1;32mMEMÓRIA RAM      \033[1;31m \033[1;32m PROCESSADOR      \033[1;31m"
 echo -e "\033[0;36m  \033[1;36mOS: \033[1;37m$_system    \033[1;31m  \033[1;36mTotal:\033[1;37m$_ram \033[1;31m  \033[1;36mNucleos: \033[1;37m$_core\033[0m   \033[1;31m"

@@ -74,14 +74,14 @@ backbot=$1
 				echo -e "\033[1;32mCertificado Ovpn localizado...\033[0m"
 				rm -rf $HOME/backup.vps >/dev/null 2>&1
 				sleep 1
-				tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/PRO/senha /etc/PRO/v2ray /etc/openvpn $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
+				tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/VpnPro/senha /etc/VpnPro/v2ray /etc/openvpn $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
 				echo ""
 				echo -e "\033[1;32mBACKUP CRIADO COM SUCESSO !\033[0m"
 				echo ""
 			} || {
 				rm -rf $HOME/backup.vps >/dev/null 2>&1
 				sleep 1
-				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/PRO/senha /etc/PRO/v2ray $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
+				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/VpnPro/senha /etc/VpnPro/v2ray $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
 				echo ""
 				echo -e "\033[1;32mBACKUP CRIADO COM SUCESSO !\033[0m"
 				echo ""
@@ -116,7 +116,7 @@ backbot=$1
 				echo ""
 				echo -e "\033[1;32mCriando backup...\033[0m"
 				echo ""
-				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/PRO/senha /etc/PRO/v2ray /etc/openvpn $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
+				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/VpnPro/senha /etc/VpnPro/v2ray /etc/openvpn $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
 				sleep 2s
 				echo ""
 				echo -e "\033[1;33mO Arquivo \033[1;32mbackup.vps"
@@ -126,7 +126,7 @@ backbot=$1
 				echo ""
 				echo -e "\033[1;32mCriando backup...\033[0m"
 				echo ""
-				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/PRO/senha /etc/PRO/v2ray $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
+				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/VpnPro/senha /etc/VpnPro/v2ray $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
 				sleep 2s
 				echo ""
 				echo -e "\033[1;33mO Arquivo \033[1;32mbackup.vps"
@@ -195,7 +195,7 @@ backbot=$1
 	fi
 } || {
 	rm /root/backup.vps 1>/dev/null 2>/dev/null
-	tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/bot /etc/PRO/senha /etc/PRO/v2ray /etc/openvpn $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
-	[[ -d "/etc/PRO/backups" ]] && mv /root/backup.vps /etc/PRO/backups/backup.vps
+	tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/bot /etc/VpnPro/senha /etc/VpnPro/v2ray /etc/openvpn $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
+	[[ -d "/etc/VpnPro/backups" ]] && mv /root/backup.vps /etc/VpnPro/backups/backup.vps
 	exit
 }
